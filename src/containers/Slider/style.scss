@@ -5,6 +5,8 @@
   width: 100%;
   max-width: 1440px;
   height: 586px;
+  overflow: hidden; /* Empêche le défilement horizontal de dépasser le conteneur */
+
   .SlideCard {
     width: 100%;
     left: 0;
@@ -32,11 +34,21 @@
       display: flex;
       justify-content: center;
       width: 100%;
+      gap: 8px; /* Ajoute un espace entre les dots */
+      
       input {
         width: 16px;
         height: 16px;
         min-width: 0;
         color: $primary;
+        appearance: none; /* Retirer le style par défaut */
+        border-radius: 50%;
+        background-color: gray; /* Couleur des dots non sélectionnés */
+        cursor: pointer;
+      }
+
+      input:checked {
+        background-color: $primary; /* Couleur des dots sélectionnés */
       }
     }
     &__description {

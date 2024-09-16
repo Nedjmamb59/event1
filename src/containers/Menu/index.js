@@ -1,8 +1,11 @@
-/* eslint-disable no-return-assign */
 import Button from "../../components/Button";
 import Logo from "../../components/Logo";
-
 import "./style.scss";
+
+// Fonction de gestion du clic pour le bouton Contact
+const handleContactClick = () => {
+  window.document.location.hash = "#contact";
+};
 
 const Menu = () => (
   <nav>
@@ -18,7 +21,7 @@ const Menu = () => (
         <a href="#notre-equipe">Notre équipe</a>
       </li>
     </ul>
-    <Button title="contact" onClick={() => (window.document.location.hash = "#contact")}>
+    <Button title="Contact" onClick={handleContactClick}>
       Contact
     </Button>
   </nav>
