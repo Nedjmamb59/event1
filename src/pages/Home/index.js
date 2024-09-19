@@ -136,18 +136,19 @@ const Page = () => {
           <div>01 23 45 67 89</div>
           <div>contact@724events.com</div>
           <div>
-            <a href="#twitch">
-              <Icon name="twitch" />
-            </a>
-            <a href="#facebook">
-              <Icon name="facebook" />
-            </a>
-            <a href="#twitter">
-              <Icon name="twitter" />
-            </a>
-            <a href="#youtube">
-              <Icon name="youtube" />
-            </a>
+          <a href="https://www.twitch.tv/toncompte" target="_blank" rel="noopener noreferrer">
+  <Icon name="twitch" />
+</a>
+<a href="https://www.facebook.com/toncompte" target="_blank" rel="noopener noreferrer">
+  <Icon name="facebook" />
+</a>
+<a href="https://www.twitter.com/toncompte" target="_blank" rel="noopener noreferrer">
+  <Icon name="twitter" />
+</a>
+<a href="https://www.youtube.com/toncompte" target="_blank" rel="noopener noreferrer">
+  <Icon name="youtube" />
+</a>
+
           </div>
         </div>
         <div className="col description">

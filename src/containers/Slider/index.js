@@ -13,18 +13,16 @@ const Slider = () => {
     new Date(evtB.date) - new Date(evtA.date)
   );
 
-  // Gestion du défilement
+  // Fonction pour passer à la carte suivante
   const nextCard = () => {
     if (byDateDesc) {
-      setTimeout(
-        () => setIndex((prevIndex) => (prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0)),
-        5000
-      );
+      setIndex((prevIndex) => (prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0));
     }
   };
 
   useEffect(() => {
-    nextCard();
+    const timer = setTimeout(nextCard, 5000);
+    return () => clearTimeout(timer); // Nettoyage du timeout à la désactivation du composant
   }, [index, byDateDesc]); // Ajout de dépendances
 
   return (
@@ -46,9 +44,9 @@ const Slider = () => {
       ))}
       <div className="SlideCard__paginationContainer">
         <div className="SlideCard__pagination">
-          {byDateDesc?.map((_, radioIdx) => (
+          {byDateDesc?.map((event, radioIdx) => (
             <input
-              key={_.id} // Utilisation d'un identifiant unique pour la clé
+              key={event.id} // Utilisation d'un identifiant unique pour la clé
               type="radio"
               name="radio-button"
               checked={index === radioIdx}
